@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanione Hiking</title>
+
+  <!-- Google Fonts: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='gallery.css') }}" />
+</head>
+<body>
+
+ <header>
+  <nav class="navbar">
+    <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo-Picsart-BackgroundRemover.PNG') }}" alt="Hotel Kanione Logo" class="logo" />
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{{ url_for('home') }}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+      <li><a href="{{ url_for('booking') }}" class="{% if request.path == '/booking' %}active{% endif %}">Book Now</a></li>
+      <li><a href="{{ url_for('services') }}" class="{% if request.path == '/services' %}active{% endif %}">Services</a></li>
+      <li><a href="{{ url_for('gallery') }}" class="{% if request.path == '/gallery' %}active{% endif %}">Gallery</a></li>
+      <li><a href="{{ url_for('contact') }}" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-background">
+      <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.54.49_9e86eee7.jpg') }}" alt="Hero Image" class="hero-img" />
+    </div>
+    <div class="hero-content">
+      <h1>Canyons and Hiking in Skrapar Await You!</h1>
+      <p>Explore the stunning beauty of Osumi Canyons and adventure trails in Skrapar, Albania.</p>
+      <a href="booking.html" class="hero-btn">Book Now</a>
+    </div>
+
+    <a href="https://maps.app.goo.gl/aYcjS1UoQkjaux7NA" target="_blank" rel="noopener noreferrer" class="review-box">
+      <img src="{{ url_for('static', filename='assets/google-icon.png') }}" alt="Google" class="google-icon" />
+      <span>⭐⭐⭐⭐⭐ <strong>5.0</strong> | 205 reviews</span>
+    </a>
+  </section>
+
+  <section class="social-section">
+    <h2>Follow or Message Us</h2>
+    <div class="social-icons">
+      <a href="https://wa.me/355692711576" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="https://www.instagram.com/hotelkanione/?hl=en" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.facebook.com/KanioneHotel/" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i> Facebook
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM SECTION -->
+  <section class="contact-form-section">
+    <h2>Send Us a Message</h2>
+    <form class="contact-form" action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- CONTACT INFO SECTION -->
+  <section class="contact-info-section">
+    <h2>Contact Details</h2>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:kanionehotel102@gmail.com">kanionehotel102@gmail.com</a>
+    </p>
+    <p>
+      <strong>Phone:</strong>
+      <a href="tel:+355692711576">+355 69 271 1576</a>
+    </p>
+    <p>
+      <strong>Address:</strong>
+      <a href="https://maps.app.goo.gl/P8SPFk4iZedQa7Ts7" target="_blank" rel="noopener noreferrer">
+        View on Google Maps
+      </a>
+    </p>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section class="map-section">
+    <h2>Find Us on the Map</h2>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23903.18762173009!2d20.22269889108273!3d40.52091108575971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135b152fa5f263cb%3A0xb52bc219dcb3cb83!2sKanione%20Hotel!5e0!3m2!1sen!2s!4v1692266627209!5m2!1sen!2s"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <footer class="custom-footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo.PNG') }}" alt="Hotel Kanione Logo" class="footer-logo" />
+        <p>
+          Explore the wild heart of Albania with guided hikes through Skrapar’s stunning canyons and the hidden depths of Pirogoshi Cave. Rooted in local knowledge and passion for nature, our tours offer a unique blend of adventure, history, and untouched landscapes.
+        </p>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Rruga Zelencke, Çorovodë 5401</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:discoverosumicanyons@gmail.com">discoverosumicanyons@gmail.com</a></p>
+        <p><i class="fas fa-phone-alt"></i> <a href="tel:+355692711576">+355692711576</a></p>
+      </div>
+
+      <div class="footer-section hours">
+        <h3>Work Hours</h3>
+        <p><i class="fas fa-clock"></i> 8:30 AM - 19:30 PM, Monday - Sunday</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/KanioneHotel/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/hotelkanione/?hl=en" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/+355692711576" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Copyright © 2025. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: false
+    });
+
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    hamburgerBtn.addEventListener('click', () => {
+      const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true' || false;
+      hamburgerBtn.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

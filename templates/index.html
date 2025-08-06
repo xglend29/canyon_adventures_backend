@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanione Hiking</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+  <nav class="navbar">
+    <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo-Picsart-BackgroundRemover.PNG') }}" alt="Hotel Kanione Logo" class="logo" />
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{{ url_for('home') }}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+      <li><a href="{{ url_for('booking') }}" class="{% if request.path == '/booking' %}active{% endif %}">Book Now</a></li>
+      <li><a href="{{ url_for('services') }}" class="{% if request.path == '/services' %}active{% endif %}">Services</a></li>
+      <li><a href="{{ url_for('gallery') }}" class="{% if request.path == '/gallery' %}active{% endif %}">Gallery</a></li>
+      <li><a href="{{ url_for('contact') }}" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-background">
+      <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-06 at 12.14.11_6f70961d.jpg') }}" alt="Hero Image" class="hero-img" />
+    </div>
+    <div class="hero-content">
+      <h1>Canyons and Hiking in Skrapar Await You!</h1>
+      <p>Explore the stunning beauty of Osumi Canyons and adventure trails in Albania.</p>
+      <a href="{{ url_for('booking') }}" class="hero-btn">Book Now</a>
+    </div>
+    <a href="https://maps.app.goo.gl/aYcjS1UoQkjaux7NA" target="_blank" class="review-box" rel="noopener noreferrer">
+      <img src="{{ url_for('static', filename='assets/google-icon.png') }}" alt="Google" class="google-icon" />
+      <span>⭐⭐⭐⭐⭐ <strong>5.0</strong> | 205 reviews</span>
+    </a>
+  </section>
+
+  <section class="feature-section">
+    <div class="feature-inner">
+      <!-- Ana e majtë me 2 imazhe -->
+      <div class="feature-image" aria-label="Kanione">
+        <div class="image-wrapper">
+          <img src="{{ url_for('static', filename='assets/osumi_canyons.jpg') }}" alt="Osumi Canyon" />
+        </div>
+        <div class="image-wrapper">
+          <img src="{{ url_for('static', filename='assets/waterfall.jpg') }}" alt="Pirogoshi Waterfall" />
+        </div>
+      </div>
+
+      <!-- Ana e djathtë me tekst -->
+      <div class="feature-text">
+        <div class="pretitle">Welcome to Skrapar Adventures</div>
+        <h1 class="title">Hiking in Skrapar: Explore Nature &amp; the Pirogoshi Cave</h1>
+        <p class="description">
+          Join us for an unforgettable hiking journey through the stunning landscapes of Skrapar, home to Albania’s most breathtaking mountains, canyons, and the legendary Pirogoshi Cave...
+        </p>
+        <ul class="features-list">
+          <li>Hiking in Skrapar: Trek through scenic trails, majestic mountains, and unspoiled nature.</li>
+          <li>Pirogoshi Cave: Discover one of Albania’s largest and most fascinating caves.</li>
+          <li>Cultural Experience: Meet locals, taste traditional food, and learn about Skrapar’s history.</li>
+          <li>Eco-Tourism: Explore Albania’s wild beauty while protecting the environment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="choose-section">
+    <div class="choose-inner">
+      <div class="choose-text">
+        <div class="pretitle">Welcome to Skrapar Adventures</div>
+        <h2 class="heading">Hiking in Skrapar: Explore Nature &amp; the Pirogoshi Cave</h2>
+        <ul class="reason-list">
+          <li><span class="checkmark">✔</span> <strong>Hiking in Skrapar:</strong> Trek through scenic trails...</li>
+          <li><span class="checkmark">✔</span> <strong>Pirogoshi Cave:</strong> Discover the cave's wonders.</li>
+          <li><span class="checkmark">✔</span> <strong>Cultural Experience:</strong> Taste, meet, and learn.</li>
+          <li><span class="checkmark">✔</span> <strong>Eco-Tourism:</strong> Sustainable wild exploration.</li>
+        </ul>
+        <div class="cta-wrapper">
+          <a href="{{ url_for('booking') }}" class="cta-button">Book Now <span class="arrow">→</span></a>
+        </div>
+      </div>
+      <div class="choose-image">
+        <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.54.49_9e86eee7.jpg') }}" alt="Hiking trail in Skrapar" />
+      </div>
+    </div>
+  </section>
+
+  <section id="adventure" class="adventure-section">
+    <h2>Our Services</h2>
+    <h1>Your Adventure Awaits</h1>
+
+    <div class="cards">
+      <div class="card" style="background-image: url('{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 12.27.21_d9ffad67.jpg') }}');">
+        <div class="overlay">
+          <h3>Hiking and Tubing Through Breathtaking Canyons </h3>
+          <p>Skrapar’s canyons offer a thrilling hiking experience...</p>
+        </div>
+      </div>
+
+      <div class="card" style="background-image: url('{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.54.49_c4220736.jpg') }}');">
+        <div class="overlay">
+          <h3>Discovering Pirogoshi Cave</h3>
+          <p>Pirogoshi Cave offers an exciting underground adventure in Albania...</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="{{ url_for('services') }}" class="read-more">Read More</a>
+  </section>
+
+  <section class="faq-section">
+    <h2>Everything you need to know</h2>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">Included in this activity</button>
+        <div class="accordion-body">
+          <p>In this activity we include: Hiking Tour, Canyonning, Rafting and food to Hotel Kanione</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Not included in this activity</button>
+        <div class="accordion-body">
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-title">
+      <p class="faq-tag">FAQ</p>
+      <h1>Frequently Asked Question</h1>
+    </div>
+
+    <div class="faq-grid">
+      <div class="accordion-item">
+        <button class="accordion-header">What do we need?</button>
+        <div class="accordion-body"><p>Bring sports clothes, shoes you can get wet, and sunscreen.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Where do we meet?</button>
+        <div class="accordion-body"><p>We meet at our rafting center 30 minutes before departure.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">When do we meet?</button>
+        <div class="accordion-body"><p>Meeting time depends on your chosen departure slot.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">How can we pay?</button>
+        <div class="accordion-body"><p>You can pay on-site with cash or card.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Which departure hour do you recommend?</button>
+        <div class="accordion-body"><p>Morning departures offer the best experience and fewer crowds.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">How many people are on a raft?</button>
+        <div class="accordion-body"><p>Typically 16 people plus a guide.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Are there any age limitation?</button>
+        <div class="accordion-body"><p>Minimum age is 10 years. Parental consent required under 18.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">How long does the activity last?</button>
+        <div class="accordion-body"><p>The full activity takes around 2-3 hours including preparation.</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Where do we leave our belongings?</button>
+        <div class="accordion-body"><p>We offer you a safe place at the meeting point</p></div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Can we take our camera with us?</button>
+        <div class="accordion-body"><p>Only waterproof action cameras are allowed on board. We also include waterproof phone pouch.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="custom-footer">
+    <div class="footer-content">
+      <!-- Rreth Nesh -->
+      <div class="footer-section about">
+        <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo.PNG') }}" alt="Hotel Kanione Logo" class="footer-logo" />
+        <p>
+          Explore the wild heart of Albania with guided hikes through Skrapar’s stunning canyons and the hidden depths of Pirogoshi Cave. Rooted in local knowledge and passion for nature, our tours offer a unique blend of adventure, history, and untouched landscapes. Whether you're a nature lover or a thrill-seeker, Skrapar promises an experience that stays with you long after the trail ends.
+        </p>
+      </div>
+
+      <!-- Kontakt -->
+      <div class="footer-section contact">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Rruga Zelencke, Çorovodë 5401</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:discoverosumicanyons@gmail.com">discoverosumicanyons@gmail.com</a></p>
+        <p><i class="fas fa-phone-alt"></i> <a href="tel:+355692711576">+355692711576</a></p>
+      </div>
+
+      <!-- Orari i Punës -->
+      <div class="footer-section hours">
+        <h3>Work Hours</h3>
+        <p><i class="fas fa-clock"></i> 8:30 AM - 19:30 PM, Monday - Sunday</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/KanioneHotel/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/hotelkanione/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/+355692711576" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Copyright © 2025. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+  <script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
+</body>
+</html>

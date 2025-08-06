@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanione Hiking</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+  <header>
+  <nav class="navbar">
+    <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo-Picsart-BackgroundRemover.PNG') }}" alt="Hotel Kanione Logo" class="logo" />
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{{ url_for('home') }}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+      <li><a href="{{ url_for('booking') }}" class="{% if request.path == '/booking' %}active{% endif %}">Book Now</a></li>
+      <li><a href="{{ url_for('services') }}" class="{% if request.path == '/services' %}active{% endif %}">Services</a></li>
+      <li><a href="{{ url_for('gallery') }}" class="{% if request.path == '/gallery' %}active{% endif %}">Gallery</a></li>
+      <li><a href="{{ url_for('contact') }}" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-background">
+      <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-06 at 12.16.28_ae801f3c.jpg') }}" alt="Hero Image" class="hero-img" />
+    </div>
+    <div class="hero-content">
+      <h1>What do we offer?</h1>
+      <p>
+        Thrilling hikes, hidden caves, and wild river adventures — all tailored for curious travelers like you.
+        Focus on the journey, we’ll handle the rest!
+      </p>
+      <a href="booking.html" class="hero-btn">Book Now</a>
+    </div>
+    <a href="https://maps.app.goo.gl/aYcjS1UoQkjaux7NA" target="_blank" class="review-box" rel="noopener noreferrer">
+      <img src="{{ url_for('static', filename='assets/google-icon.png') }}" alt="Google" class="google-icon">
+      <span>⭐⭐⭐⭐⭐ <strong>5.0</strong> | 205 reviews</span>
+    </a>
+  </section>
+
+  <!-- SERVICE 1 -->
+  <section class="service-section">
+    <article class="service-card">
+      <div class="image">
+        <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.21.00_05063e92.jpg') }}" alt="Hiking and Tubing" />
+      </div>
+      <div class="content">
+        <h2>Hiking and Tubing Through Breathtaking Canyons</h2>
+        <p>
+          It’s perfect for beginners and adventure lovers alike – whether you're looking to discover Albania’s wild canyons, cool off in crystal-clear waters, or just enjoy an unforgettable outdoor experience.
+        </p>
+        <p>
+          This tour takes place in Çorovodë, Skrapar, known for its dramatic landscapes and pristine nature. You’ll start with a scenic hike through narrow canyons, followed by a refreshing tubing ride down the river.
+        </p>
+        <p><strong>Duration:</strong> approx. 2.5–3 hours</p>
+        <p><strong>Included:</strong> Ketu do shtohet Informacioni</p>
+        <p><strong>What to bring:</strong> Ketu do shtohet Informacioni</p>
+        <a href="booking.html" class="book-btn">Book Now</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- SERVICE 2 -->
+  <section class="service-section">
+    <article class="service-card">
+      <div class="image">
+        <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.54.49_c4220736.jpg') }}" alt="Pirogoshi Cave" />
+      </div>
+      <div class="content">
+        <h2>Pirogoshi Cave Adventure</h2>
+        <p>
+          Pirogoshi Cave Exploration is a fascinating underground journey through Albania’s largest cave. This tour is perfect for nature lovers, curious explorers, and those who enjoy combining a light physical challenge with incredible natural sights.
+        </p>
+        <p>
+          The cave features majestic rock formations, tunnels, halls, and pools carved over thousands of years. The experience is guided by professionals who share geological facts and local legends.
+        </p>
+        <p><strong>Duration:</strong> approx. 2.5–3 hours</p>
+        <p><strong>Included:</strong> helmet with headlamp, gloves, local guide, transfer, photos, and free parking.</p>
+        <p><strong>What to bring:</strong> comfortable clothing, hiking shoes, light jacket, backpack, and water.</p>
+        <a href="booking.html" class="book-btn">Book Now</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="custom-footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo.PNG') }}" alt="Hotel Kanione Logo" class="footer-logo" />
+        <p>
+          Explore the wild heart of Albania with guided hikes through Skrapar’s stunning canyons and the hidden depths of Pirogoshi Cave. Rooted in local knowledge and passion for nature, our tours offer a unique blend of adventure, history, and untouched landscapes.
+        </p>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Rruga Zelencke, Çorovodë 5401</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:discoverosumicanyons@gmail.com">discoverosumicanyons@gmail.com</a></p>
+        <p><i class="fas fa-phone-alt"></i> <a href="tel:+355692711576">+355692711576</a></p>
+      </div>
+
+      <div class="footer-section hours">
+        <h3>Work Hours</h3>
+        <p><i class="fas fa-clock"></i> 8:30 AM - 19:30 PM, Monday - Sunday</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/KanioneHotel/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/hotelkanione/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/+355692711576" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Copyright © 2025. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hamburger Script -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+  <!-- Optional: carousel or other scripts -->
+  <script src="{{ url_for('static', filename='js/carousel.js') }}"></script>
+
+</body>
+</html>

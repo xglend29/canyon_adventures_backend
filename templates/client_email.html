@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Confirmation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+    .email-container {
+      background-color: #ffffff;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #d30000;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      margin-top: 20px;
+      background-color: #e62222;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .info {
+      margin-top: 20px;
+    }
+    .info p {
+      margin: 5px 0;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <img src="https://i.imgur.com/OxOvtIC.png" alt="Hotel Kanione Logo" class="logo" />
+
+    <h2>Thank you for your booking, {{ full_name }}!</h2>
+    <p>We are excited to have you join our adventure in Skrapar. Below is your booking information:</p>
+
+    <div class="info">
+      <p><strong>Date:</strong> {{ date }}</p>
+      <p><strong>Adults:</strong> {{ adults }}</p>
+      <p><strong>Children:</strong> {{ children }}</p>
+      <p><strong>Country:</strong> {{ country }}</p>
+      <p><strong>Phone:</strong> {{ phone }}</p>
+      <p><strong>Tour Package:</strong> {{ tour }}</p>
+    </div>
+
+    <a href="https://maps.app.goo.gl/aYcjS1UoQkjaux7NA" class="button" target="_blank">View Location</a>
+
+    <div class="footer">
+      <p>Hotel Kanione Team<br>
+      Rruga Zelencke, Çorovodë 5401, Albania</p>
+    </div>
+  </div>
+</body>
+</html>

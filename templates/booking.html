@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanione Hiking - Booking</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='booking.css') }}" />
+</head>
+<body>
+
+ <header>
+  <nav class="navbar">
+    <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo-Picsart-BackgroundRemover.PNG') }}" alt="Hotel Kanione Logo" class="logo" />
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{{ url_for('home') }}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+      <li><a href="{{ url_for('booking') }}" class="{% if request.path == '/booking' %}active{% endif %}">Book Now</a></li>
+      <li><a href="{{ url_for('services') }}" class="{% if request.path == '/services' %}active{% endif %}">Services</a></li>
+      <li><a href="{{ url_for('gallery') }}" class="{% if request.path == '/gallery' %}active{% endif %}">Gallery</a></li>
+      <li><a href="{{ url_for('contact') }}" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-background">
+      <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-06 at 12.33.16_1bd9d917.jpg') }}" alt="Hero Image" class="hero-img" />
+    </div>
+    <div class="hero-content">
+      <h1>Ready for your next adventure?</h1>
+      <p>
+        Don’t wait any longer — explore hidden gems, hike stunning trails, <br>
+        and live unforgettable moments in the heart of nature.
+      </p>
+      <a href="{{ url_for('booking') }}" class="hero-btn">Book Now</a>
+    </div>
+    <a href="https://maps.app.goo.gl/aYcjS1UoQkjaux7NA" target="_blank" class="review-box" rel="noopener noreferrer">
+      <img src="{{ url_for('static', filename='assets/google-icon.png') }}" alt="Google" class="google-icon" />
+      <span>⭐⭐⭐⭐⭐ <strong>5.0</strong> | 205 reviews</span>
+    </a>
+  </section>
+
+ <section class="reservation-section">
+  <div class="container">
+    <h2>Book Your Adventure</h2>
+
+    <!-- MESSAGET E FLASHEVE -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div id="server-message" style="margin-bottom:20px;">
+          {% for category, message in messages %}
+            <p style="color: {% if category == 'error' %}red{% else %}green{% endif %}; font-weight:bold;">
+              {{ message }}
+            </p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form id="reservation-form" method="POST" action="{{ url_for('submit_booking') }}">
+
+      <!-- Emri -->
+      <div class="form-group">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full_name" required />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <!-- Telefoni -->
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required />
+      </div>
+
+      <!-- Shteti -->
+      <div class="form-group">
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+          <option value="">-- Select Country --</option>
+       <option value="AF">Afghanistan</option>
+  <option value="AL">Albania</option>
+  <option value="DZ">Algeria</option>
+  <option value="AS">American Samoa</option>
+  <option value="AD">Andorra</option>
+  <option value="AO">Angola</option>
+  <option value="AI">Anguilla</option>
+  <option value="AQ">Antarctica</option>
+  <option value="AG">Antigua and Barbuda</option>
+  <option value="AR">Argentina</option>
+  <option value="AM">Armenia</option>
+  <option value="AW">Aruba</option>
+  <option value="AU">Australia</option>
+  <option value="AT">Austria</option>
+  <option value="AZ">Azerbaijan</option>
+  <option value="BS">Bahamas</option>
+  <option value="BH">Bahrain</option>
+  <option value="BD">Bangladesh</option>
+  <option value="BB">Barbados</option>
+  <option value="BY">Belarus</option>
+  <option value="BE">Belgium</option>
+  <option value="BZ">Belize</option>
+  <option value="BJ">Benin</option>
+  <option value="BM">Bermuda</option>
+  <option value="BT">Bhutan</option>
+  <option value="BO">Bolivia</option>
+  <option value="BA">Bosnia and Herzegovina</option>
+  <option value="BW">Botswana</option>
+  <option value="BR">Brazil</option>
+  <option value="IO">British Indian Ocean Territory</option>
+  <option value="BN">Brunei Darussalam</option>
+  <option value="BG">Bulgaria</option>
+  <option value="BF">Burkina Faso</option>
+  <option value="BI">Burundi</option>
+  <option value="KH">Cambodia</option>
+  <option value="CM">Cameroon</option>
+  <option value="CA">Canada</option>
+  <option value="CV">Cape Verde</option>
+  <option value="KY">Cayman Islands</option>
+  <option value="CF">Central African Republic</option>
+  <option value="TD">Chad</option>
+  <option value="CL">Chile</option>
+  <option value="CN">China</option>
+  <option value="CO">Colombia</option>
+  <option value="KM">Comoros</option>
+  <option value="CD">Congo (Kinshasa)</option>
+  <option value="CG">Congo (Brazzaville)</option>
+  <option value="CR">Costa Rica</option>
+  <option value="HR">Croatia</option>
+  <option value="CU">Cuba</option>
+  <option value="CY">Cyprus</option>
+  <option value="CZ">Czech Republic</option>
+  <option value="DK">Denmark</option>
+  <option value="DJ">Djibouti</option>
+  <option value="DM">Dominica</option>
+  <option value="DO">Dominican Republic</option>
+  <option value="EC">Ecuador</option>
+  <option value="EG">Egypt</option>
+  <option value="SV">El Salvador</option>
+  <option value="GQ">Equatorial Guinea</option>
+  <option value="ER">Eritrea</option>
+  <option value="EE">Estonia</option>
+  <option value="SZ">Eswatini</option>
+  <option value="ET">Ethiopia</option>
+  <option value="FJ">Fiji</option>
+  <option value="FI">Finland</option>
+  <option value="FR">France</option>
+  <option value="GA">Gabon</option>
+  <option value="GM">Gambia</option>
+  <option value="GE">Georgia</option>
+  <option value="DE">Germany</option>
+  <option value="GH">Ghana</option>
+  <option value="GR">Greece</option>
+  <option value="GD">Grenada</option>
+  <option value="GT">Guatemala</option>
+  <option value="GN">Guinea</option>
+  <option value="GW">Guinea-Bissau</option>
+  <option value="GY">Guyana</option>
+  <option value="HT">Haiti</option>
+  <option value="HN">Honduras</option>
+  <option value="HU">Hungary</option>
+  <option value="IS">Iceland</option>
+  <option value="IN">India</option>
+  <option value="ID">Indonesia</option>
+  <option value="IR">Iran</option>
+  <option value="IQ">Iraq</option>
+  <option value="IE">Ireland</option>
+  <option value="IL">Israel</option>
+  <option value="IT">Italy</option>
+  <option value="JM">Jamaica</option>
+  <option value="JP">Japan</option>
+  <option value="JO">Jordan</option>
+  <option value="KZ">Kazakhstan</option>
+  <option value="KE">Kenya</option>
+  <option value="KI">Kiribati</option>
+  <option value="KR">Korea, South</option>
+  <option value="KW">Kuwait</option>
+  <option value="KG">Kyrgyzstan</option>
+  <option value="LA">Laos</option>
+  <option value="LV">Latvia</option>
+  <option value="LB">Lebanon</option>
+  <option value="LS">Lesotho</option>
+  <option value="LR">Liberia</option>
+  <option value="LY">Libya</option>
+  <option value="LI">Liechtenstein</option>
+  <option value="LT">Lithuania</option>
+  <option value="LU">Luxembourg</option>
+        </select>
+      </div>
+
+    <div class="form-group">
+  <label for="date">Select Date</label>
+  <input type="date" id="date" name="date" required min="{{ current_date }}">
+
+</div>
+
+
+      <!-- Të rritur -->
+      <div class="form-group">
+        <label for="adults">Adults</label>
+        <input type="number" id="adults" name="adults" value="1" min="1" required />
+      </div>
+
+      <!-- Fëmijë -->
+      <div class="form-group" id="children-group">
+        <label for="children">Children (≤ 12 years)</label>
+        <input type="number" id="children" name="children" value="0" min="0" />
+      </div>
+
+      <!-- Paketa -->
+      <div class="form-group">
+        <label for="tour">Package</label>
+        <select id="tour" name="tour" required>
+          <option value="">-- Choose a Tour --</option>
+          <option value="osumi_canyoning">1 Day - Canyoning in Osumi Canyons + Lunch (Adults Only)</option>
+          <option value="piro_canyoning">1 Day - Canyoning in Pirogoshi Cave + Lunch (Adults Only)</option>
+          <option value="osumi_hiking">1 Day - Hiking in Osumi Canyons + Lunch</option>
+          <option value="piro_hiking">1 Day - Hiking in Pirogoshi Cave + Lunch</option>
+        </select>
+      </div>
+
+      <!-- Çmimi total -->
+      <div class="form-group price-box">
+        Total Price: <strong id="price">€0</strong>
+      </div>
+
+      <!-- Butoni -->
+      <button type="submit" class="submit-btn">Book Now</button>
+    </form>
+  </div>
+</section>
+
+
+<footer class="custom-footer">
+  <div class="footer-content">
+
+    <div class="footer-section about">
+      <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo.PNG') }}" alt="Hotel Kanione Logo" class="footer-logo" />
+      <p>
+        Explore the wild heart of Albania with guided hikes through Skrapar’s stunning canyons and the hidden depths of Pirogoshi Cave. Rooted in local knowledge and passion for nature, our tours offer a unique blend of adventure, history, and untouched landscapes. Whether you're a nature lover or a thrill-seeker, Skrapar promises an experience that stays with you long after the trail ends.
+      </p>
+    </div>
+
+    <div class="footer-section contact">
+      <h3>Contact</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Rruga Zelencke, Çorovodë 5401</p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:discoverosumicanyons@gmail.com">discoverosumicanyons@gmail.com</a></p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:+355692711576">+355692711576</a></p>
+    </div>
+
+    <div class="footer-section hours">
+      <h3>Work Hours</h3>
+      <p><i class="fas fa-clock"></i> 8:30 AM - 19:30 PM, Monday - Sunday</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/KanioneHotel/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/hotelkanione/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/+355692711576" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>Copyright © 2025. All rights reserved.</span>
+  </div>
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+
+
+<script>
+const tourData = {
+  osumi_canyoning: { adult: 80, child: 0, adultsOnly: true },
+  piro_canyoning: { adult: 80, child: 0, adultsOnly: true },
+  osumi_hiking: { adult: 50, child: 40, adultsOnly: false },
+  piro_hiking: { adult: 50, child: 40, adultsOnly: false }
+};
+
+const tourSelect = document.getElementById('tour');
+const adultsInput = document.getElementById('adults');
+const childrenInput = document.getElementById('children');
+const childrenGroup = document.getElementById('children-group');
+const priceDisplay = document.getElementById('price');
+
+function updatePrice() {
+  const tour = tourSelect.value;
+  const data = tourData[tour];
+  if (!data) {
+    priceDisplay.textContent = "€0";
+    return;
+  }
+
+  const adults = parseInt(adultsInput.value) || 0;
+  const children = parseInt(childrenInput.value) || 0;
+  const total = (adults * data.adult) + (children * data.child);
+
+  priceDisplay.textContent = `€${total}`;
+}
+
+function toggleChildrenField() {
+  const tour = tourSelect.value;
+  const data = tourData[tour];
+  if (data?.adultsOnly) {
+    childrenInput.value = 0;
+    childrenInput.disabled = true;
+    childrenGroup.style.display = "none";
+  } else {
+    childrenInput.disabled = false;
+    childrenGroup.style.display = "block";
+  }
+  updatePrice();
+}
+
+tourSelect.addEventListener('change', toggleChildrenField);
+adultsInput.addEventListener('input', updatePrice);
+childrenInput.addEventListener('input', updatePrice);
+document.addEventListener('DOMContentLoaded', () => {
+  toggleChildrenField();
+});
+</script>
+
+
+</body>
+</html>

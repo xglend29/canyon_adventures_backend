@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanione Hiking</title>
+
+  <!-- Google Fonts: Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='gallery.css') }}">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+ <header>
+  <nav class="navbar">
+    <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo-Picsart-BackgroundRemover.PNG') }}" alt="Hotel Kanione Logo" class="logo" />
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{{ url_for('home') }}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+      <li><a href="{{ url_for('booking') }}" class="{% if request.path == '/booking' %}active{% endif %}">Book Now</a></li>
+      <li><a href="{{ url_for('services') }}" class="{% if request.path == '/services' %}active{% endif %}">Services</a></li>
+      <li><a href="{{ url_for('gallery') }}" class="{% if request.path == '/gallery' %}active{% endif %}">Gallery</a></li>
+      <li><a href="{{ url_for('contact') }}" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-background">
+      <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-06 at 12.33.16_1bd9d917.jpg') }}" alt="Hero Image" class="hero-img" />
+    </div>
+    <div class="hero-content">
+      <h1>Canyons and Hiking in Skrapar Await You!</h1>
+      <p>Explore the stunning beauty of Osumi Canyons and adventure trails in Skrapar, Albania.</p>
+      <a href="booking.html" class="hero-btn">Book Now</a>
+    </div>
+
+    <a href="https://maps.app.goo.gl/aYcjS1UoQkjaux7NA" target="_blank" rel="noopener noreferrer" class="review-box">
+      <img src="{{ url_for('static', filename='assets/google-icon.png') }}" alt="Google" class="google-icon" />
+      <span>⭐⭐⭐⭐⭐ <strong>5.0</strong> | 205 reviews</span>
+    </a>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-grid">
+    <a href="{{ url_for('static', filename='assets/11.jpg') }}" class="gallery-item glightbox" data-gallery="gallery1">
+      <img src="{{ url_for('static', filename='assets/11.jpg') }}" alt="Rafting 1" />
+    </a>
+    <a href="{{ url_for('static', filename='assets/Hotel Kanione Logo.PNG') }}" class="gallery-item glightbox" data-gallery="gallery1">
+      <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo.PNG') }}" alt="Rafting 2" />
+    </a>
+    <a href="{{ url_for('static', filename='assets/Hotel_photo.jpg') }}" class="gallery-item glightbox" data-gallery="gallery1">
+      <img src="{{ url_for('static', filename='assets/Hotel_photo.jpg') }}" alt="Rafting 3" />
+    </a>
+    <a href="{{ url_for('static', filename='assets/osumi_canyons.jpg') }}" class="gallery-item glightbox" data-gallery="gallery1">
+      <img src="{{ url_for('static', filename='assets/osumi_canyons.jpg') }}" alt="Rafting 4" />
+    </a>
+    <a href="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-03 at 19.42.13_3395cd96.jpg') }}" class="gallery-item glightbox" data-gallery="gallery1">
+      <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-03 at 19.42.13_3395cd96.jpg') }}" alt="Rafting 5" />
+    </a>
+    <a href="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.21.01_1db81332.jpg') }}" class="gallery-item glightbox" data-gallery="gallery1">
+      <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.21.01_1db81332.jpg') }}" alt="Rafting 6" />
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="custom-footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo.PNG') }}" alt="Hotel Kanione Logo" class="footer-logo" />
+        <p>
+          Explore the wild heart of Albania with guided hikes through Skrapar’s stunning canyons and the hidden depths of Pirogoshi Cave. Rooted in local knowledge and passion for nature, our tours offer a unique blend of adventure, history, and untouched landscapes.
+        </p>
+      </div>
+
+      <div class="footer-section contact">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Rruga Zelencke, Çorovodë 5401</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:discoverosumicanyons@gmail.com">discoverosumicanyons@gmail.com</a></p>
+        <p><i class="fas fa-phone-alt"></i> <a href="tel:+355692711576">+355692711576</a></p>
+      </div>
+
+      <div class="footer-section hours">
+        <h3>Work Hours</h3>
+        <p><i class="fas fa-clock"></i> 8:30 AM - 19:30 PM, Monday - Sunday</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/KanioneHotel/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/hotelkanione/?hl=en" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/+355692711576" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Copyright © 2025. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: false
+    });
+
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburgerBtn.addEventListener('click', () => {
+      const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true' || false;
+      hamburgerBtn.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

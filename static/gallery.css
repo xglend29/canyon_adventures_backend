@@ -1,0 +1,727 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* HEADER & NAVBAR */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+.logo {
+  height: 70px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a.active {
+  color: red;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #ff3b3b;
+}
+
+.book-button {
+  background-color: red;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.book-button:hover {
+  background-color: darkred;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero-background .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  padding: 12px 25px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #e25500;
+}
+
+.review-box {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 4;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.review-box .google-icon {
+  width: 20px;
+}
+
+/* ----------------------------- */
+/* RESPONSIVE STYLES */
+/* ----------------------------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    gap: 20px;
+    border-radius: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .book-button {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .review-box {
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+
+  .hero-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+
+
+/* GALLERY SECTION */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+body.glightbox-open {
+  overflow: hidden;
+}
+
+
+.social-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.social-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon i {
+  font-size: 28px;
+}
+
+.social-icon:hover {
+  transform: scale(1.05);
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.instagram {
+  background-color: #C13584;
+}
+
+.facebook {
+  background-color: #1877F2;
+}
+
+
+.contact-form-section {
+  padding: 60px 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.contact-form-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.contact-form button {
+  padding: 14px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: darkred;
+}
+
+
+
+.contact-info-section {
+  background: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  color: #222;
+}
+
+.contact-info-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.contact-info-section p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+
+.map-section {
+  padding: 40px 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.map-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.map-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.social-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.social-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #222;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 30px;
+  border-radius: 8px; /* më pak rrumbullakim për formë drejtkëndore */
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  min-width: 220px;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.social-icon i {
+  font-size: 1.3rem;
+}
+
+/* Ngjyrat */
+.social-icon.whatsapp {
+  background-color: #25D366;
+}
+
+.social-icon.instagram {
+  background-color: #C13584;
+}
+
+.social-icon.facebook {
+  background-color: #1877F2;
+}
+
+/* Hover animacion */
+.social-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Mobile – vertikalisht */
+@media (max-width: 600px) {
+  .social-icons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.custom-footer {
+  background: url('assets/osumi_canyons.jpg') center center/cover no-repeat;
+  color: #fff;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.custom-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+}
+
+.footer-section h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.footer-section p {
+  margin: 10px 0;
+  color: #ddd;
+  font-size: 15px;
+}
+
+.footer-logo {
+  width: 90px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.footer-section a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.social-icons a {
+  background: white;
+  color: black;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid #444;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #bbb;
+}
+
+
+
+
+
+.custom-footer {
+  background: url('assets/osumi_canyons.jpg') center center/cover no-repeat;
+  color: #fff;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.custom-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+}
+
+.footer-section h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.footer-section p {
+  margin: 10px 0;
+  color: #ddd;
+  font-size: 15px;
+}
+
+.footer-logo {
+  width: 90px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.footer-section a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.social-icons a {
+  background: white;
+  color: black;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid #444;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: #bbb;
+}
+
+/* 📱 Responsive */
+@media (max-width: 800px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-section {
+    max-width: 500px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin: 0 auto 16px;
+  }
+}
+
+
+.footer-section.hours .social-icons {
+  margin-top: 10px;
+}
+
+.footer-section.hours .social-icons a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 22px;
+  color: #555;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-section.hours .social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.footer-section.hours .social-icons a[aria-label="Facebook"]:hover {
+  color: #1877f2;
+}
+
+.footer-section.hours .social-icons a[aria-label="Instagram"]:hover {
+  color: #e4405f;
+}
+
+.footer-section.hours .social-icons {
+  background-color: transparent !important;
+  padding: 0;
+  margin: 0;
+}
+.footer-section.hours .social-icons a {
+  background-color: transparent !important;
+  border: none;
+}
+
+.footer-section.hours .social-icons a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 22px;
+  color: #555;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-section.hours .social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.footer-section.hours .social-icons a[aria-label="Facebook"]:hover {
+  color: #1877f2; /* Ngjyra Facebook */
+}
+
+.footer-section.hours .social-icons a[aria-label="Instagram"]:hover {
+  color: #e4405f; /* Ngjyra Instagram */
+}
+
+.footer-section.hours .social-icons a[aria-label="WhatsApp"]:hover {
+  color: #25D366; /* Ngjyra WhatsApp */
+}

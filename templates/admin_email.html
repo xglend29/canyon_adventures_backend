@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Booking Received</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f8f8;
+      padding: 20px;
+      color: #333;
+    }
+    .email-container {
+      background-color: #ffffff;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      border-top: 5px solid #d30000;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #d30000;
+      font-size: 22px;
+    }
+    .info p {
+      margin: 8px 0;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <img src="https://i.imgur.com/OxOvtIC.png" alt="Hotel Kanione Logo" class="logo" />
+
+    <h2>📥 New Booking Received</h2>
+
+    <div class="info">
+      <p><strong>👤 Name:</strong> {{ full_name }}</p>
+      <p><strong>📧 Email:</strong> {{ email }}</p>
+      <p><strong>📞 Phone:</strong> {{ phone }}</p>
+      <p><strong>🌍 Country:</strong> {{ country }}</p>
+      <p><strong>🗓 Date:</strong> {{ date }}</p>
+      <p><strong>👨‍👩‍👧 Adults:</strong> {{ adults }}</p>
+      <p><strong>🧒 Children:</strong> {{ children }}</p>
+      <p><strong>🎒 Package:</strong> {{ tour }}</p>
+    </div>
+
+    <div class="footer">
+      <p>📩 You received this email because someone submitted a booking on your site.</p>
+    </div>
+  </div>
+</body>
+</html>
