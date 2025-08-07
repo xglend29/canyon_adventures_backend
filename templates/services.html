@@ -55,49 +55,90 @@
     </a>
   </section>
 
-  <!-- SERVICE 1 -->
-  <section class="service-section">
-    <article class="service-card">
-      <div class="image">
-        <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.21.00_05063e92.jpg') }}" alt="Hiking and Tubing" />
-      </div>
-      <div class="content">
-        <h2>Hiking and Tubing Through Breathtaking Canyons</h2>
-        <p>
-          It’s perfect for beginners and adventure lovers alike – whether you're looking to discover Albania’s wild canyons, cool off in crystal-clear waters, or just enjoy an unforgettable outdoor experience.
-        </p>
-        <p>
-          This tour takes place in Çorovodë, Skrapar, known for its dramatic landscapes and pristine nature. You’ll start with a scenic hike through narrow canyons, followed by a refreshing tubing ride down the river.
-        </p>
-        <p><strong>Duration:</strong> approx. 2.5–3 hours</p>
-        <p><strong>Included:</strong> Ketu do shtohet Informacioni</p>
-        <p><strong>What to bring:</strong> Ketu do shtohet Informacioni</p>
-        <a href="booking.html" class="book-btn">Book Now</a>
-      </div>
-    </article>
-  </section>
+ <section class="service-section">
+  <article class="service-card">
+    <div class="image">
+      <img src="{{ url_for('static', filename='assets/osumi_canyons.jpg') }}" alt="Osumi Canyoning" />
+    </div>
+    <div class="content">
+      <h2>Osumi Canyoning + Lunch at Hotel Kanione</h2>
+      <p>
+        Explore Albania’s most iconic canyons with a full day of adventure! This tour is designed for adults looking to enjoy a mix of adrenaline and stunning nature in the heart of Skrapar.
+      </p>
+      <p>
+        The day includes hiking, swimming, and canyoning through the beautiful Osumi Canyons with professional guides, followed by a traditional Albanian lunch in a local guesthouse.
+      </p>
+      <p><strong>Duration:</strong> approx. 4–5 hours</p>
+      <p><strong>Included:</strong> guide, helmet, life jacket, transport, lunch, photos</p>
+      <p><strong>What to bring:</strong> towel, sportswear, shoes for water, dry clothes</p>
+      <a href="{{ url_for('booking', tour='osumi_canyoning') }}" class="book-btn">Book Now</a>
+    </div>
+  </article>
+</section>
 
-  <!-- SERVICE 2 -->
+ <section class="service-section">
+  <article class="service-card">
+    <div class="image">
+      <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.54.49_c4220736.jpg') }}" alt="Pirogoshi Cave" />
+    </div>
+    <div class="content">
+      <h2>Pirogoshi Caving Adventure + Lunch at Hotel Kanione</h2>
+      <p>
+        Discover the largest cave in Albania with this underground adventure, perfect for adults who enjoy natural wonders, stories, and light physical activity.
+      </p>
+      <p>
+        The tour includes guided exploration through tunnels, halls, and pools, followed by a delicious lunch in the beautiful countryside of Skrapar.
+      </p>
+      <p><strong>Duration:</strong> approx. 2.5–3 hours</p>
+      <p><strong>Included:</strong> helmet with headlamp, gloves, local guide, transfer, photos, lunch</p>
+      <p><strong>What to bring:</strong> comfortable clothes, hiking shoes, light jacket, backpack</p>
+      <a href="{{ url_for('booking', tour='piro_canyoning') }}" class="book-btn">Book Now</a>
+    </div>
+  </article>
+</section>
+
   <section class="service-section">
-    <article class="service-card">
-      <div class="image">
-        <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.54.49_c4220736.jpg') }}" alt="Pirogoshi Cave" />
-      </div>
-      <div class="content">
-        <h2>Pirogoshi Cave Adventure</h2>
-        <p>
-          Pirogoshi Cave Exploration is a fascinating underground journey through Albania’s largest cave. This tour is perfect for nature lovers, curious explorers, and those who enjoy combining a light physical challenge with incredible natural sights.
-        </p>
-        <p>
-          The cave features majestic rock formations, tunnels, halls, and pools carved over thousands of years. The experience is guided by professionals who share geological facts and local legends.
-        </p>
-        <p><strong>Duration:</strong> approx. 2.5–3 hours</p>
-        <p><strong>Included:</strong> helmet with headlamp, gloves, local guide, transfer, photos, and free parking.</p>
-        <p><strong>What to bring:</strong> comfortable clothing, hiking shoes, light jacket, backpack, and water.</p>
-        <a href="booking.html" class="book-btn">Book Now</a>
-      </div>
-    </article>
-  </section>
+  <article class="service-card">
+    <div class="image">
+      <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.21.00_05063e92.jpg') }}" alt="Hiking Osumi" />
+    </div>
+    <div class="content">
+      <h2>Hiking in Osumi Canyons + Lunch at Hotel Kanione</h2>
+      <p>
+        This guided hike takes you through the most scenic parts of Osumi Canyons, with plenty of opportunities to take photos, learn about local legends, and enjoy nature at its purest.
+      </p>
+      <p>
+        Ideal for families, couples, or solo travelers looking for an easier outdoor experience, this tour ends with a light picnic lunch.
+      </p>
+      <p><strong>Duration:</strong> approx. 2–3 hours</p>
+      <p><strong>Included:</strong> local guide, transfer, picnic lunch, free parking</p>
+      <p><strong>What to bring:</strong> sunscreen, water bottle, camera, comfortable shoes</p>
+      <a href="{{ url_for('booking', tour='osumi_hiking') }}" class="book-btn">Book Now</a>
+    </div>
+  </article>
+</section>
+
+  <section class="service-section">
+  <article class="service-card">
+    <div class="image">
+       <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.54.49_c4220736.jpg') }}" alt="Pirogoshi Cave" />
+    </div>
+    <div class="content">
+      <h2>Hiking at Pirogoshi Cave + Lunch at Hotel Kanione</h2>
+      <p>
+        This light hiking tour around the Pirogoshi region is perfect for those who prefer walking through forests and mountain paths rather than entering the cave itself.
+      </p>
+      <p>
+        The hike is guided and includes stories about the region’s history and geology. Enjoy a delicious local lunch in a nearby village afterward.
+      </p>
+      <p><strong>Duration:</strong> approx. 2 hours</p>
+      <p><strong>Included:</strong> guide, transfer, lunch, water, and free parking</p>
+      <p><strong>What to bring:</strong> hiking shoes, sun hat, small backpack, water bottle</p>
+      <a href="{{ url_for('booking', tour='piro_hiking') }}" class="book-btn">Book Now</a>
+    </div>
+  </article>
+</section>
+
 
   <!-- FOOTER -->
   <footer class="custom-footer">

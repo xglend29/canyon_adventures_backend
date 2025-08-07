@@ -229,7 +229,7 @@
         <select id="tour" name="tour" required>
           <option value="">-- Choose a Tour --</option>
           <option value="osumi_canyoning">1 Day - Canyoning in Osumi Canyons + Lunch (Adults Only)</option>
-          <option value="piro_canyoning">1 Day - Canyoning in Pirogoshi Cave + Lunch (Adults Only)</option>
+          <option value="piro_canyoning">1 Day - Cavening in Pirogoshi Cave + Lunch (Adults Only)</option>
           <option value="osumi_hiking">1 Day - Hiking in Osumi Canyons + Lunch</option>
           <option value="piro_hiking">1 Day - Hiking in Pirogoshi Cave + Lunch</option>
         </select>
@@ -293,7 +293,7 @@
 <script>
 const tourData = {
   osumi_canyoning: { adult: 80, child: 0, adultsOnly: true },
-  piro_canyoning: { adult: 80, child: 0, adultsOnly: true },
+  piro_canyoning: { adult: 50, child: 0, adultsOnly: true },
   osumi_hiking: { adult: 50, child: 40, adultsOnly: false },
   piro_hiking: { adult: 50, child: 40, adultsOnly: false }
 };
@@ -349,6 +349,8 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('active');
     });
   </script>
+
+
 
 
 </body>
