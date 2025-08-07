@@ -58,27 +58,13 @@
     </a>
   </section>
 
-  <!-- GALLERY -->
   <section class="gallery-grid">
-    <a href="{{ url_for('static', filename='assets/11.jpg') }}" class="gallery-item glightbox" data-gallery="gallery1">
-      <img src="{{ url_for('static', filename='assets/11.jpg') }}" alt="Rafting 1" />
+  {% for i in range(1, 103) %}
+    <a href="{{ url_for('static', filename='assets/1 (' ~ i ~ ').jpg') }}" class="gallery-item glightbox" data-gallery="gallery1">
+      <img src="{{ url_for('static', filename='assets/1 (' ~ i ~ ').jpg') }}" alt="Rafting {{ i }}" />
     </a>
-    <a href="{{ url_for('static', filename='assets/Hotel Kanione Logo.PNG') }}" class="gallery-item glightbox" data-gallery="gallery1">
-      <img src="{{ url_for('static', filename='assets/Hotel Kanione Logo.PNG') }}" alt="Rafting 2" />
-    </a>
-    <a href="{{ url_for('static', filename='assets/Hotel_photo.jpg') }}" class="gallery-item glightbox" data-gallery="gallery1">
-      <img src="{{ url_for('static', filename='assets/Hotel_photo.jpg') }}" alt="Rafting 3" />
-    </a>
-    <a href="{{ url_for('static', filename='assets/osumi_canyons.jpg') }}" class="gallery-item glightbox" data-gallery="gallery1">
-      <img src="{{ url_for('static', filename='assets/osumi_canyons.jpg') }}" alt="Rafting 4" />
-    </a>
-    <a href="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-03 at 19.42.13_3395cd96.jpg') }}" class="gallery-item glightbox" data-gallery="gallery1">
-      <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-03 at 19.42.13_3395cd96.jpg') }}" alt="Rafting 5" />
-    </a>
-    <a href="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.21.01_1db81332.jpg') }}" class="gallery-item glightbox" data-gallery="gallery1">
-      <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-08-04 at 11.21.01_1db81332.jpg') }}" alt="Rafting 6" />
-    </a>
-  </section>
+  {% endfor %}
+</section>
 
   <!-- FOOTER -->
   <footer class="custom-footer">
@@ -92,7 +78,7 @@
 
       <div class="footer-section contact">
         <h3>Contact</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Rruga Zelencke, Çorovodë 5401</p>
+        <p><i class="fas fa-map-marker-alt"></i> Rruga Mestan Ujaniku Çorovodë,Skrapar</p>
         <p><i class="fas fa-envelope"></i> <a href="mailto:discoverosumicanyons@gmail.com">discoverosumicanyons@gmail.com</a></p>
         <p><i class="fas fa-phone-alt"></i> <a href="tel:+355692711576">+355692711576</a></p>
       </div>
@@ -122,16 +108,16 @@
       loop: true,
       autoplayVideos: false
     });
-
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
+const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 
-    hamburgerBtn.addEventListener('click', () => {
-      const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true' || false;
-      hamburgerBtn.setAttribute('aria-expanded', !expanded);
+    hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
+
   </script>
+
+
 
 </body>
 </html>

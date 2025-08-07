@@ -156,11 +156,10 @@
       autoplayVideos: false
     });
 
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
+const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
-    hamburgerBtn.addEventListener('click', () => {
-      const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true' || false;
-      hamburgerBtn.setAttribute('aria-expanded', !expanded);
+
+    hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
   </script>
